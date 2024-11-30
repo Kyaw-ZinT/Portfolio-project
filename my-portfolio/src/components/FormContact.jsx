@@ -8,6 +8,8 @@ export default function FormContact() {
   });
 
   const [status, setStatus] = useState("");
+  const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
 
   const handleChange = (e) => {
     setFormData({ ...formdata, [e.target.id]: e.target.value });
@@ -18,8 +20,10 @@ export default function FormContact() {
     setStatus("Sending...");
 
     try {
-      const botToken = "7282145750:AAHkjwboJeV68SfwcCohTG27X8t1i1WFY_M";
-      const chatId = "7089053104";
+      if (!botToken || !chatId) {
+        throw new Error("Bot token or chat ID is undefined. Check your .env file.");
+      }
+
       //   const text = `New Contact Form Submission:
       //   Name: ${formdata.name}
       //   Email : ${formdata.email}
