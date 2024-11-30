@@ -18,7 +18,21 @@ export default function FormContact() {
     setStatus("Sending...");
 
     try {
-      const response = await axios.post("http://localhost:4005/send-message", formdata);
+      const botToken = "7282145750:AAHkjwboJeV68SfwcCohTG27X8t1i1WFY_M";
+      const chatId = "7089053104";
+      //   const text = `New Contact Form Submission:
+      //   Name: ${formdata.name}
+      //   Email : ${formdata.email}
+      //   Message : ${formdata.message}
+      //   `;
+      const text = `New message from ${formdata.name} (${formdata.email}):\n${formdata.message}`;
+
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+      const payload = {
+        chat_id: chatId,
+        text: text,
+      };
+      const response = await axios.post(url, payload);
       setStatus(response.data.message || "Message send successfully");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
