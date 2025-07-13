@@ -1,22 +1,24 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
-
+import ecommerceImage from "../images/ecommerce.jpg";
+import nextMovie from "../images/nextMovie.png";
 const projects = [
   {
     title: "E-commerce Platform",
     description: "A full-featured online store built with React and Node.js",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-    liveLink: "#",
-    githubLink: "#",
+    image: ecommerceImage,
+    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Stripe", "Multer", "JWT Authentication"],
+    liveLink: "https://e-commerce-iota-beryl-83.vercel.app",
+    githubFrontend: "https://github.com/Kyaw-ZinT/ecomerce-frontend.git",
+    githubBackend: "https://github.com/Kyaw-ZinT/ecommerce-backend",
   },
   {
-    title: "Task Management App",
-    description: "A productivity app for managing daily tasks and projects",
-    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80",
-    tech: ["React", "TypeScript", "Firebase"],
-    liveLink: "#",
-    githubLink: "#",
+    title: "Next Movie App",
+    description: "A movie discovery app built with Next.js and TMDB API",
+    image: nextMovie,
+    tech: ["Next.js", "JavaScript", "TMDB API"],
+    liveLink: "https://next-movies-navy.vercel.app",
+    githubLink: "https://github.com/Kyaw-ZinT/Next-Movies",
   },
   {
     title: "Weather Dashboard",
@@ -57,15 +59,39 @@ export default function Projects() {
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Live Demo
                   </a>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-gray-600 hover:text-gray-700"
-                  >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </a>
+                  {project.githubFrontend && (
+                    <a
+                      href={project.githubFrontend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-600 hover:text-gray-700 mr-2"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Frontend Code
+                    </a>
+                  )}
+                  {project.githubBackend && (
+                    <a
+                      href={project.githubBackend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-600 hover:text-gray-700"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Backend Code
+                    </a>
+                  )}
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-600 hover:text-gray-700"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
