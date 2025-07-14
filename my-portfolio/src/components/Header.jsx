@@ -36,7 +36,7 @@ export default function Header() {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/kyaw-zin-tun-8225a0265"
+                href="https://www.linkedin.com/in/kyaw-zin-tun-a450b4251/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600
