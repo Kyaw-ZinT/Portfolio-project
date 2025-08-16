@@ -2,6 +2,7 @@ import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import ecommerceImage from "../images/ecommerce.jpg";
 import nextMovie from "../images/nextMovie.png";
+import socialMedia from "../images/socialMedia.png";
 const projects = [
   {
     title: "E-commerce Platform",
@@ -21,12 +22,25 @@ const projects = [
     githubLink: "https://github.com/Kyaw-ZinT/Next-Movies",
   },
   {
-    title: "Weather Dashboard",
-    description: "Real-time weather information with interactive maps",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80",
-    tech: ["React", "OpenWeather API", "Chart.js"],
-    liveLink: "#",
-    githubLink: "#",
+    title: "Social Media Clone",
+    description:
+      "A full-stack social media clone built with the MERN stack. The application provides essential social features including user authentication (JWT), post creation with image uploads (Cloudinary), and user-to-user interactions like following, liking, and commenting. It leverages React Query for efficient state management and features a responsive UI with infinite scrolling, demonstrating a strong understanding of modern web development principles.",
+    image: socialMedia,
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "TanStack",
+      "Query (React Query)",
+      "JWT",
+      "REST APIs",
+      "Cloudinary",
+      "Tailwind CSS",
+    ],
+    liveLink: "https://social-media-frontend-swart.vercel.app",
+    githubFrontend: "https://github.com/Kyaw-ZinT/social-media-frontend.git",
+    githubBackend: "https://github.com/Kyaw-ZinT/social-media-backend.git",
   },
 ];
 
